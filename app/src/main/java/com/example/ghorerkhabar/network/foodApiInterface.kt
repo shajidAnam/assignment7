@@ -5,6 +5,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface foodApiInterface {
-    @GET("shajidAnam/Assignment5-6/main/data/instituteDetails.json")
+    @GET("shajidAnam/assignment7/master/data.json")
     fun getFoodList(): Call<MutableList<food>>
 }

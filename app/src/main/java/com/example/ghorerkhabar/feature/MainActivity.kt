@@ -1,13 +1,16 @@
-package com.example.ghorerkhabar
+package com.example.ghorerkhabar.feature
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.ghorerkhabar.ClickListener.onItemClickListener
+import com.example.ghorerkhabar.R
 import com.example.ghorerkhabar.core.BaseActivity
 import com.example.ghorerkhabar.model.FoodCallBack
 import com.example.ghorerkhabar.model.food
 import com.example.ghorerkhabar.model.foodModel
 import com.example.ghorerkhabar.model.foodModelImpl
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 class MainActivity : BaseActivity() {
@@ -47,6 +50,14 @@ class MainActivity : BaseActivity() {
     }
 
     private fun initFooodAdapter(foodlist: MutableList<food>) {
+        val adapter=FoodAdapter(foodlist,object :onItemClickListener{
+            override fun onItemClickListener(position: Int) {
+                showShortToast("successs")
+            }
+
+        })
+        recyclerView.layoutManager=LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+        recyclerView.adapter=adapter
 
     }
 }
