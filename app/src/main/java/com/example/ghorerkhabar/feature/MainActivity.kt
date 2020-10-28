@@ -3,6 +3,7 @@ package com.example.ghorerkhabar.feature
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.ghorerkhabar.ClickListener.onItemClickListener
 import com.example.ghorerkhabar.R
 import com.example.ghorerkhabar.core.BaseActivity
@@ -52,7 +53,7 @@ class MainActivity : BaseActivity() {
     private fun initFooodAdapter(foodlist: MutableList<food>) {
         val adapter=FoodAdapter(foodlist,object :onItemClickListener{
             override fun onItemClickListener(position: Int) {
-                showShortToast("successs")
+                showShortToast("success")
             }
 
         })
